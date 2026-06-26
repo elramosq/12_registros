@@ -12,15 +12,22 @@ Persona P[1000];
 int main()
 {
 	int n;
-	cin>>n;
+	cout<<"Ingrese el numero de personas: ";cin>>n;
+	cin.ignore();
 	
 	for(int i=0;i<n;i++)
 	{
-		// solo funciona con un nombre
-		cout<<"Nombres de persona "<<i+1<<":";cin>>P[i].nombres;
+
+		cout<<"Nombres de persona "<<i+1<<":";
+		getline(cin,P[i].nombres);
+		cout<<endl;
 		cout<<"DNI de persona "<<i+1<<":";cin>>P[i].DNI;
 		cout<<"Edad de la persona "<<i+1<<":";cin>>P[i].edad;
+		cin.ignore();
+		cout<<endl;
 	}
+	
+	
 	
 	int cont_mayor_50=0, sum_edades=0;
 	
@@ -34,7 +41,7 @@ int main()
 	}
 	
 	cout<<"Cantidad de personas mayores de 50: "<<cont_mayor_50<<endl;
-	cout<<"Promedio de edades: "<<sum_edades/n<<endl;
+	cout<<"Promedio de edades: "<<float(sum_edades/n)<<endl;
 	
 			
 	
